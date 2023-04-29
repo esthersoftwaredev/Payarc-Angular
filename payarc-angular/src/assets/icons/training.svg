@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <g id="Group_2784" data-name="Group 2784" transform="translate(0 -1299)">
+    <rect id="Rectangle_311" data-name="Rectangle 311" width="23" height="23" transform="translate(0 1299)" fill="rgba(255,255,255,0)"/>
+    <g id="drawer-office" transform="translate(0.5 1300)">
+      <path id="Path_277" data-name="Path 277" d="M18.111,2H3.889A.894.894,0,0,0,3,2.9H3V16.378H19V2.9a.894.894,0,0,0-.889-.9ZM13.667,12.783H8.333a.9.9,0,0,1,0-1.8h5.333a.9.9,0,0,1,0,1.8Zm0-5.392H8.333a.9.9,0,0,1,0-1.8h5.333a.9.9,0,0,1,0,1.8Z" transform="translate(0)" fill="currentColor"/>
+      <path id="Path_278" data-name="Path 278" d="M3.85,21.4H6.4a.85.85,0,0,0,.85-.85h0V18.425A.425.425,0,0,1,7.675,18H3v2.55a.85.85,0,0,0,.85.85Z" transform="translate(0 -1.622)" fill="currentColor" opacity="0.4"/>
+      <path id="Path_279" data-name="Path 279" d="M15.5,18a.425.425,0,0,1,.425.425h0V20.55a.85.85,0,0,0,.85.85h2.55a.85.85,0,0,0,.85-.85h0V18Z" transform="translate(-1.175 -1.622)" fill="currentColor" opacity="0.4"/>
+    </g>
+  </g>
+</svg>

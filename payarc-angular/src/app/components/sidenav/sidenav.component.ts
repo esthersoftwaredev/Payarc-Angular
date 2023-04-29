@@ -13,12 +13,12 @@ export class SidenavComponent {
   navigationItems: NavigationItem[] = [
     {
       routerLink: '/',
-      icon: 'home',
+      icon: 'dashboard',
       text: 'Dashboard',
     },
     {
       routerLink: '/about',
-      icon: 'info',
+      icon: 'linked',
       text: 'My Payarc',
       additionalIcon: 'keyboard_arrow_down',
       submenu: [
@@ -98,33 +98,33 @@ export class SidenavComponent {
       ],
     },
     {
-      routerLink: '/contact',
-      icon: 'mail',
+      routerLink: '/p-circle',
+      icon: 'p-circle',
       text: 'About Payarc',
     },
     {
       routerLink: '/contact',
-      icon: 'mail',
+      icon: 'p-training',
       text: 'Payarc Training',
     },
     {
-      routerLink: '/contact',
-      icon: 'mail',
+      routerLink: '/training',
+      icon: 'training',
       text: 'Industry Training',
     },
     {
       routerLink: '/contact',
-      icon: 'mail',
+      icon: 'marketing',
       text: 'Marketing Materials',
     },
     {
-      routerLink: '/contact',
-      icon: 'mail',
+      routerLink: '/form',
+      icon: 'form',
       text: 'Marketing Request Forms',
     },
     {
       routerLink: '/contact',
-      icon: 'mail',
+      icon: 'tools',
       text: 'Access to tools',
     },
   ];

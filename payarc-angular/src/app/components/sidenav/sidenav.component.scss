@@ -1,5 +1,5 @@
 ::ng-deep .mdc-list-item__primary-text {
-  display: flex;
+	display: flex;
 }
 
 mat-sidenav {
@@ -13,11 +13,11 @@ mat-sidenav {
 
 	.logo-container {
 		display: flex;
-    flex-wrap: wrap;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-    padding: 0 0.5rem;
-    margin-bottom: 5rem;
+		padding: 0 0.5rem;
+		margin-bottom: 5rem;
 
 		img {
 			width: 2.5rem;
@@ -26,69 +26,81 @@ mat-sidenav {
 			cursor: pointer;
 		}
 
-    mat-icon {
-      font-size: 2rem;
-      cursor: pointer;
+		mat-icon {
+			font-size: 2rem;
+			cursor: pointer;
 
-      &.collapse {
-        opacity: 0;
-      }
-    }
+			&.collapse {
+				opacity: 0;
+        color: #121744;
+			}
+		}
 	}
 
 	mat-nav-list {
-    width: 100%;
+		width: 100%;
 
 		a {
 			display: flex;
-      flex-wrap: wrap;
+			flex-wrap: wrap;
 			align-items: center;
 			justify-content: center;
 		}
 
-		.nav-text {
-      font-size: 0.9rem;
-			margin-left: 0.8rem;
-			opacity: 0;
-
+		mat-icon {
+			color: #707070;
 		}
 
-    .second-icon {
-      position: absolute;
-      right: 1rem;
-      opacity: 0;
-    }
+		.nav-text {
+			font-size: 0.9rem;
+			margin-left: 0.8rem;
+			opacity: 0;
+		}
+
+		.second-icon {
+			position: absolute;
+			right: 1rem;
+			opacity: 0;
+		}
+	}
+
+	.nav-text {
+		opacity: 0;
 	}
 }
 
 .expanded {
 	width: 250px;
 
-  .logo-container {
-
-    mat-icon {
-      &.collapse {
-        opacity: 1;
-        transition: opacity 1s;
-      }
-    }
-  }
+	.logo-container {
+		mat-icon {
+			&.collapse {
+				opacity: 1;
+				transition: opacity 1s;
+			}
+		}
+	}
 
 	mat-nav-list {
-    width: 100%;
+		width: 100%;
 
 		.nav-text {
 			opacity: 1;
-      transition: opacity 1s;
+			transition: opacity 1s;
 		}
 
-    .second-icon {
-      opacity: 1;
-      transition: opacity 1s;
-    }
+		.second-icon {
+			opacity: 1;
+			transition: opacity 1s;
+		}
+	}
+
+	.nav-text {
+		opacity: 1;
+		transition: opacity 1s;
 	}
 }
 
 .rotate {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }

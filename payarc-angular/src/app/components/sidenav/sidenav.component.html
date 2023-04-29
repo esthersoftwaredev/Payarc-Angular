@@ -17,7 +17,7 @@
 		<!-- first level -->
 		<ng-container *ngFor="let item of navigationItems">
 			<a mat-list-item [routerLink]="item.routerLink">
-				<mat-icon>{{ item.icon }}</mat-icon>
+				<mat-icon svgIcon="{{ item.icon }}"></mat-icon>
 				<span class="nav-text">{{ item.text }}</span>
 				<ng-container *ngIf="item.additionalIcon">
 					<mat-icon
@@ -59,7 +59,7 @@
 		</ng-container>
 	</mat-nav-list>
 	<div class="search">
-		<mat-icon>search</mat-icon>
+		<mat-icon svgIcon="search"></mat-icon>
 		<span class="nav-text">Search</span>
 	</div>
 	<div class="Profile">
