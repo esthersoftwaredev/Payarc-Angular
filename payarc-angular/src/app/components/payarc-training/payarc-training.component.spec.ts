@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { PayarcTrainingComponent } from './payarc-training.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('PayarcTrainingComponent', () => {
+  let component: PayarcTrainingComponent;
+  let fixture: ComponentFixture<PayarcTrainingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ PayarcTrainingComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(PayarcTrainingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

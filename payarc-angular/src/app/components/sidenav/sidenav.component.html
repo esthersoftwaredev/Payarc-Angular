@@ -16,7 +16,7 @@
 	<mat-nav-list>
 		<!-- first level -->
 		<ng-container *ngFor="let item of navigationItems">
-			<a mat-list-item [routerLink]="item.routerLink">
+			<a mat-list-item [routerLink]="item.routerLink" routerLinkActive="active">
 				<mat-icon svgIcon="{{ item.icon }}"></mat-icon>
 				<span class="nav-text">{{ item.text }}</span>
 				<ng-container *ngIf="item.additionalIcon">

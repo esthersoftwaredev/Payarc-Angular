@@ -89,6 +89,15 @@ mat-sidenav {
 				background-color: transparent;
 			}
 
+			&.active {
+				mat-icon {
+					color: $accent;
+				}
+				.nav-text {
+					color: $accent;
+				}
+			}
+
 			&:hover {
 				mat-icon {
 					color: $accent;
@@ -191,7 +200,7 @@ mat-sidenav {
 }
 
 .expanded {
-	width: 16.5rem;
+	width: 16.2rem;
 
 	.logo-container {
 		mat-icon {

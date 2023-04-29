@@ -1,0 +1,44 @@
+@import "../../../styles.scss";
+
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	font-family: $poppins;
+
+	.card-wrapper {
+		width: 55vw;
+
+		mat-card {
+			padding: 2rem;
+			flex-direction: row;
+			align-items: center;
+
+			.card-image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 35%;
+
+				img {
+					width: 14rem;
+				}
+			}
+			.card-content {
+				width: 65%;
+
+				h1 {
+					font-family: $poppins;
+					font-size: 3rem;
+					font-weight: bold;
+					line-height: 5rem;
+				}
+
+				a {
+					color: $accent;
+				}
+			}
+		}
+	}
+}

@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+
+import { OverviewComponent } from './components/overview/overview.component';
+import { PayarcTrainingComponent } from './components/payarc-training/payarc-training.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  // { path: 'about', component: AboutComponent },
+  { path: '', redirectTo: '/overview', pathMatch: 'full' },
+  { path: 'overview', component: OverviewComponent },
+  { path: 'payarc-training', component: PayarcTrainingComponent },
 ];
 
 @NgModule({

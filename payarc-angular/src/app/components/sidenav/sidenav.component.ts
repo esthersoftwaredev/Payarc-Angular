@@ -12,7 +12,7 @@ export class SidenavComponent {
 
   navigationItems: NavigationItem[] = [
     {
-      routerLink: '/',
+      routerLink: '/dashboard',
       icon: 'dashboard',
       text: 'Dashboard',
     },
@@ -23,7 +23,7 @@ export class SidenavComponent {
       additionalIcon: 'keyboard_arrow_down',
       submenu: [
         {
-          routerLink: '',
+          routerLink: '/overview',
           text: 'Overview',
         },
         {
@@ -103,7 +103,7 @@ export class SidenavComponent {
       text: 'About Payarc',
     },
     {
-      routerLink: '/contact',
+      routerLink: '/payarc-training',
       icon: 'p-training',
       text: 'Payarc Training',
     },

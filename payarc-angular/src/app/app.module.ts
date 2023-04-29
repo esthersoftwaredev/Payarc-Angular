@@ -12,12 +12,13 @@ import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
-import { HomeComponent } from "./components/home/home.component";
+import { OverviewComponent } from "./components/overview/overview.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { ClockComponent } from './components/clock/clock.component';
+import { PayarcTrainingComponent } from './components/payarc-training/payarc-training.component';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, SidenavComponent, ClockComponent],
+	declarations: [AppComponent, OverviewComponent, SidenavComponent, ClockComponent, PayarcTrainingComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
