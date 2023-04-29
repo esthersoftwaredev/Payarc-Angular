@@ -89,5 +89,11 @@ export class AppModule {
 				"assets/icons/tools.svg"
 			)
 		);
+		this.matIconRegistry.addSvgIcon(
+			"profile-mine",
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				"assets/icons/profile-mine.svg"
+			)
+		);
 	}
 }
