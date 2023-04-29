@@ -1,5 +1,11 @@
+@import "../../../styles.scss";
+
 ::ng-deep .mdc-list-item__primary-text {
 	display: flex;
+
+	&:hover {
+		background-color: transparent;
+	}
 }
 
 mat-sidenav {
@@ -32,7 +38,8 @@ mat-sidenav {
 
 			&.collapse {
 				opacity: 0;
-        color: #121744;
+				color: #121744;
+				padding-right: 0.7rem;
 			}
 		}
 	}
@@ -40,11 +47,56 @@ mat-sidenav {
 	mat-nav-list {
 		width: 100%;
 
+    &.submenu {
+      border-left: 2px solid $accent;
+      margin: 0 1rem;
+      width: 80%;
+
+      a {
+        height: 2rem;
+
+        .nav-text {
+          color: $accent;
+          font-size: 0.9rem;
+          margin: 0;
+        }
+      }
+    }
+
+    &.sub-submenu {
+      border-left: 2px solid grey;
+      margin: 0 1rem;
+
+      a {
+        height: 2rem;
+
+        .nav-text {
+          color: grey;
+          font-size: 0.8rem;
+          margin: 0;
+        }
+      }
+    }
+
 		a {
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
 			justify-content: center;
+
+			&::before {
+				background-color: transparent;
+			}
+
+			&:hover {
+				mat-icon {
+					color: $accent;
+
+				}
+        .nav-text {
+          color: $accent;
+        }
+			}
 		}
 
 		mat-icon {
@@ -53,8 +105,10 @@ mat-sidenav {
 
 		.nav-text {
 			font-size: 0.9rem;
+			font-weight: 400;
 			margin-left: 0.8rem;
 			opacity: 0;
+
 		}
 
 		.second-icon {
@@ -70,7 +124,7 @@ mat-sidenav {
 }
 
 .expanded {
-	width: 250px;
+	width: 16rem;
 
 	.logo-container {
 		mat-icon {
@@ -83,6 +137,12 @@ mat-sidenav {
 
 	mat-nav-list {
 		width: 100%;
+
+		a {
+			&:hover {
+				background-color: $accent-bgr;
+			}
+		}
 
 		.nav-text {
 			opacity: 1;

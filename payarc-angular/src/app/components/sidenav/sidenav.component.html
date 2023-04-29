@@ -32,7 +32,7 @@
 				<mat-nav-list class="submenu">
 					<!-- second level -->
 					<ng-container *ngFor="let subItem of item.submenu">
-						<a mat-list-item [routerLink]="subItem.routerLink">
+						<a mat-list-item class="sub-item" [routerLink]="subItem.routerLink">
 							<span class="nav-text">{{ subItem.text }}</span>
 							<ng-container *ngIf="subItem.additionalIcon">
 								<mat-icon
@@ -44,7 +44,7 @@
 							</ng-container>
 						</a>
 						<ng-container *ngIf="subItem.submenu && subItem.showSubmenu">
-							<mat-nav-list class="submenu">
+							<mat-nav-list class="sub-submenu">
 								<!-- third level -->
 								<ng-container *ngFor="let subSubItem of subItem.submenu">
 									<a mat-list-item [routerLink]="subSubItem.routerLink">

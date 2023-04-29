@@ -28,6 +28,21 @@ $theme: mat.define-light-theme((
   typography: mat.define-typography-config(),
 ));
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Poppins, sans-serif'
+);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $theme-primary,
+    accent: $theme-accent,
+    warn: $theme-warn,
+  ),
+  typography: $custom-typography,
+));
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
