@@ -2,65 +2,43 @@
   <div class="logo-container">
     <img src="assets/images/logo-mini.png" alt="Logo" (click)="toggleExpandSidenav()" />
   </div>
+
+
   <mat-nav-list>
-
-<ng-container *ngFor="let item of navigationItems">
-    <a mat-list-item [routerLink]="item.routerLink">
-      <mat-icon>{{ item.icon }}</mat-icon>
-      <span class="nav-text">{{ item.text }}</span>
-      <ng-container *ngIf="item.additionalIcon">
-        <mat-icon class="second-icon" (click)="item.showSubmenu = !item.showSubmenu">{{ item.additionalIcon }}</mat-icon>
-      </ng-container>
-    </a>
-    <ng-container *ngIf="item.submenu && item.showSubmenu">
-      <mat-nav-list class="submenu">
-        <ng-container *ngFor="let subItem of item.submenu">
-          <a mat-list-item [routerLink]="subItem.routerLink">
-            <mat-icon>{{ subItem.icon }}</mat-icon>
-            <span class="nav-text">{{ subItem.text }}</span>
-            <ng-container *ngIf="subItem.additionalIcon">
-              <mat-icon class="second-icon">{{ subItem.additionalIcon }}</mat-icon>
-            </ng-container>
-          </a>
+    <!-- first level -->
+    <ng-container *ngFor="let item of navigationItems">
+      <a mat-list-item [routerLink]="item.routerLink">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span class="nav-text">{{ item.text }}</span>
+        <ng-container *ngIf="item.additionalIcon">
+          <mat-icon class="second-icon" (click)="item.showSubmenu = !item.showSubmenu">{{ item.additionalIcon }}</mat-icon>
         </ng-container>
-      </mat-nav-list>
+      </a>
+      <ng-container *ngIf="item.submenu && item.showSubmenu">
+        <mat-nav-list class="submenu">
+          <!-- second level -->
+          <ng-container *ngFor="let subItem of item.submenu">
+            <a mat-list-item [routerLink]="subItem.routerLink">
+              <mat-icon>{{ subItem.icon }}</mat-icon>
+              <span class="nav-text">{{ subItem.text }}</span>
+              <ng-container *ngIf="subItem.additionalIcon">
+                <mat-icon class="second-icon" (click)="subItem.showSubmenu = !subItem.showSubmenu">{{ subItem.additionalIcon }}</mat-icon>
+              </ng-container>
+            </a>
+            <ng-container *ngIf="subItem.submenu && subItem.showSubmenu">
+              <mat-nav-list class="submenu">
+                <!-- third level -->
+                <ng-container *ngFor="let subSubItem of subItem.submenu">
+                  <a mat-list-item [routerLink]="subSubItem.routerLink">
+                    <mat-icon>{{ subSubItem.icon }}</mat-icon>
+                    <span class="nav-text">{{ subSubItem.text }}</span>
+                  </a>
+                </ng-container>
+              </mat-nav-list>
+            </ng-container>
+          </ng-container>
+        </mat-nav-list>
+      </ng-container>
     </ng-container>
-  </ng-container>
-
-<!--
-    <a mat-list-item routerLink="/">
-      <mat-icon>home</mat-icon>
-      <span class="nav-text">Dashboard</span>
-    </a>
-    <a mat-list-item routerLink="/about">
-      <mat-icon>info</mat-icon>
-      <span class="nav-text">My Payarc</span>
-      <mat-icon class="arrow">mail</mat-icon>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>mail</mat-icon>
-      <span class="nav-text">About Payarc</span>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>mail</mat-icon>
-      <span class="nav-text">Payarc Training</span>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>mail</mat-icon>
-      <span class="nav-text">Industry Training</span>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>mail</mat-icon>
-      <span class="nav-text">Marketing Materials</span>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>mail</mat-icon>
-      <span class="nav-text">Marketing Request Forms</span>
-    </a>
-    <a mat-list-item routerLink="/contact">
-      <mat-icon>mail</mat-icon>
-      <span class="nav-text">Access to tools</span>
-    </a> -->
-
   </mat-nav-list>
 </mat-sidenav>

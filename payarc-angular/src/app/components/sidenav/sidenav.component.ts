@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
 import { NavigationItem } from 'src/app/models/navigation-item';
 
 @Component({
@@ -10,17 +9,6 @@ import { NavigationItem } from 'src/app/models/navigation-item';
 export class SidenavComponent {
   opened = true;
   expanded = false;
-  @ViewChild('sidenav') sidenav!: MatSidenav;
-
-  toggleSidenav(): void {
-    this.opened = !this.opened;
-    this.sidenav.toggle();
-  }
-
-  toggleExpandSidenav(): void {
-    this.expanded = !this.expanded;
-  }
-
 
   navigationItems: NavigationItem[] = [
     {
@@ -44,6 +32,18 @@ export class SidenavComponent {
           icon: 'star',
           text: 'Submenu Item 2',
           additionalIcon: 'mail',
+          submenu: [
+            {
+              routerLink: '/subsubmenu1',
+              icon: 'check',
+              text: 'Subsubmenu Item 1',
+            },
+            {
+              routerLink: '/subsubmenu2',
+              icon: 'check',
+              text: 'Subsubmenu Item 2',
+            },
+          ],
         },
       ],
     },
@@ -78,5 +78,22 @@ export class SidenavComponent {
       text: 'Access to tools',
     },
   ];
+
+
+  toggleExpandSidenav(): void {
+    this.expanded = !this.expanded;
+    if (!this.expanded) {
+      this.closeAllSubmenus(this.navigationItems);
+    }
+  }
+
+  closeAllSubmenus(items: NavigationItem[]): void {
+    items.forEach(item => {
+      if (item.submenu) {
+        item.showSubmenu = false;
+        this.closeAllSubmenus(item.submenu);
+      }
+    });
+  }
 
 }
