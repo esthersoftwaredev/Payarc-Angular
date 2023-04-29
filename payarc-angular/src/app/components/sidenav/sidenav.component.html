@@ -1,44 +1,69 @@
-<mat-sidenav #sidenav mode="over" [(opened)]="opened" [ngClass]="{ 'expanded': expanded }">
-  <div class="logo-container">
-    <img src="assets/images/logo-mini.png" alt="Logo" (click)="toggleExpandSidenav()" />
-  </div>
+<mat-sidenav
+	#sidenav
+	mode="over"
+	[(opened)]="opened"
+	[ngClass]="{ expanded: expanded }"
+>
+	<div class="logo-container">
+		<img
+			src="assets/images/logo-mini.png"
+			alt="Logo"
+			(click)="expandSidenav()"
+		/>
+    <mat-icon class="collapse" (click)="collapseSidenav()">chevron_left</mat-icon>
+	</div>
 
-
-  <mat-nav-list>
-    <!-- first level -->
-    <ng-container *ngFor="let item of navigationItems">
-      <a mat-list-item [routerLink]="item.routerLink">
-        <mat-icon>{{ item.icon }}</mat-icon>
-        <span class="nav-text">{{ item.text }}</span>
-        <ng-container *ngIf="item.additionalIcon">
-          <mat-icon class="second-icon" (click)="item.showSubmenu = !item.showSubmenu">{{ item.additionalIcon }}</mat-icon>
-        </ng-container>
-      </a>
-      <ng-container *ngIf="item.submenu && item.showSubmenu">
-        <mat-nav-list class="submenu">
-          <!-- second level -->
-          <ng-container *ngFor="let subItem of item.submenu">
-            <a mat-list-item [routerLink]="subItem.routerLink">
-              <mat-icon>{{ subItem.icon }}</mat-icon>
-              <span class="nav-text">{{ subItem.text }}</span>
-              <ng-container *ngIf="subItem.additionalIcon">
-                <mat-icon class="second-icon" (click)="subItem.showSubmenu = !subItem.showSubmenu">{{ subItem.additionalIcon }}</mat-icon>
-              </ng-container>
-            </a>
-            <ng-container *ngIf="subItem.submenu && subItem.showSubmenu">
-              <mat-nav-list class="submenu">
-                <!-- third level -->
-                <ng-container *ngFor="let subSubItem of subItem.submenu">
-                  <a mat-list-item [routerLink]="subSubItem.routerLink">
-                    <mat-icon>{{ subSubItem.icon }}</mat-icon>
-                    <span class="nav-text">{{ subSubItem.text }}</span>
-                  </a>
-                </ng-container>
-              </mat-nav-list>
-            </ng-container>
-          </ng-container>
-        </mat-nav-list>
-      </ng-container>
-    </ng-container>
-  </mat-nav-list>
+	<mat-nav-list>
+		<!-- first level -->
+		<ng-container *ngFor="let item of navigationItems">
+			<a mat-list-item [routerLink]="item.routerLink">
+				<mat-icon>{{ item.icon }}</mat-icon>
+				<span class="nav-text">{{ item.text }}</span>
+				<ng-container *ngIf="item.additionalIcon">
+					<mat-icon
+						class="second-icon"
+            [ngClass]="{'rotate': item.showSubmenu}"
+						(click)="item.showSubmenu = !item.showSubmenu"
+						>{{ item.additionalIcon }}</mat-icon
+					>
+				</ng-container>
+			</a>
+			<ng-container *ngIf="item.submenu && item.showSubmenu">
+				<mat-nav-list class="submenu">
+					<!-- second level -->
+					<ng-container *ngFor="let subItem of item.submenu">
+						<a mat-list-item [routerLink]="subItem.routerLink">
+							<span class="nav-text">{{ subItem.text }}</span>
+							<ng-container *ngIf="subItem.additionalIcon">
+								<mat-icon
+									class="second-icon"
+                  [ngClass]="{'rotate': subItem.showSubmenu}"
+									(click)="subItem.showSubmenu = !subItem.showSubmenu"
+									>{{  subItem.additionalIcon }}</mat-icon
+								>
+							</ng-container>
+						</a>
+						<ng-container *ngIf="subItem.submenu && subItem.showSubmenu">
+							<mat-nav-list class="submenu">
+								<!-- third level -->
+								<ng-container *ngFor="let subSubItem of subItem.submenu">
+									<a mat-list-item [routerLink]="subSubItem.routerLink">
+										<span class="nav-text">{{ subSubItem.text }}</span>
+									</a>
+								</ng-container>
+							</mat-nav-list>
+						</ng-container>
+					</ng-container>
+				</mat-nav-list>
+			</ng-container>
+		</ng-container>
+	</mat-nav-list>
+	<div class="search">
+		<mat-icon>search</mat-icon>
+		<span class="nav-text">Search</span>
+	</div>
+	<div class="Profile">
+		<mat-icon>search</mat-icon>
+		<span class="nav-text">Profile</span>
+	</div>
 </mat-sidenav>

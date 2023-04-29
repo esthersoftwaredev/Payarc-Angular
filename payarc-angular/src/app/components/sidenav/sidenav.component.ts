@@ -8,7 +8,7 @@ import { NavigationItem } from 'src/app/models/navigation-item';
 })
 export class SidenavComponent {
   opened = true;
-  expanded = false;
+  expanded = true;
 
   navigationItems: NavigationItem[] = [
     {
@@ -20,28 +20,78 @@ export class SidenavComponent {
       routerLink: '/about',
       icon: 'info',
       text: 'My Payarc',
-      additionalIcon: 'mail',
+      additionalIcon: 'keyboard_arrow_down',
       submenu: [
         {
-          routerLink: '/submenu1',
-          icon: 'star',
-          text: 'Submenu Item 1',
+          routerLink: '',
+          text: 'Overview',
         },
         {
-          routerLink: '/submenu2',
-          icon: 'star',
-          text: 'Submenu Item 2',
-          additionalIcon: 'mail',
+          routerLink: '/apply-app',
+          text: 'Apply App',
+          additionalIcon: 'keyboard_arrow_down',
           submenu: [
             {
-              routerLink: '/subsubmenu1',
-              icon: 'check',
-              text: 'Subsubmenu Item 1',
+              routerLink: '/applications',
+              text: 'Applications',
             },
             {
-              routerLink: '/subsubmenu2',
-              icon: 'check',
-              text: 'Subsubmenu Item 2',
+              routerLink: '/pricing-templates',
+              text: 'Pricing Templates',
+            },
+            {
+              routerLink: '/reports',
+              text: 'Reports',
+            },
+            {
+              routerLink: '/user-maintenance',
+              text: 'User Maintenance',
+            },
+            {
+              routerLink: '/settings',
+              text: 'Settings',
+            },
+          ],
+        },
+        {
+          routerLink: '/my-residuals',
+          text: 'My Residuals',
+        },
+        {
+          routerLink: '/my-merchants',
+          text: 'My Merchants',
+          additionalIcon: 'keyboard_arrow_down',
+          submenu: [
+            {
+              routerLink: '/live-merchants',
+              text: 'Live Merchants',
+            },
+            {
+              routerLink: '/deposits-batch-report',
+              text: 'Deposits Batch & Report',
+            },
+            {
+              routerLink: '/chargebacks',
+              text: 'Chargebacks',
+            },
+            {
+              routerLink: '/ach Returns',
+              text: 'ACH Returns',
+            },
+          ],
+        },
+        {
+          routerLink: '/resources',
+          text: 'Resources',
+          additionalIcon: 'keyboard_arrow_down',
+          submenu: [
+            {
+              routerLink: '/resources',
+              text: 'Resources',
+            },
+            {
+              routerLink: '/api-keys',
+              text: 'API Keys',
             },
           ],
         },
@@ -80,20 +130,22 @@ export class SidenavComponent {
   ];
 
 
-  toggleExpandSidenav(): void {
-    this.expanded = !this.expanded;
-    if (!this.expanded) {
-      this.closeAllSubmenus(this.navigationItems);
-    }
+  expandSidenav(): void {
+    this.expanded = true;
   }
 
-  closeAllSubmenus(items: NavigationItem[]): void {
+  collapseSidenav(): void {
+    this.expanded = false;
+    this.collapseAllSubmenus(this.navigationItems);
+
+  }
+
+  collapseAllSubmenus(items: NavigationItem[]): void {
     items.forEach(item => {
       if (item.submenu) {
         item.showSubmenu = false;
-        this.closeAllSubmenus(item.submenu);
+        this.collapseAllSubmenus(item.submenu);
       }
     });
   }
-
 }

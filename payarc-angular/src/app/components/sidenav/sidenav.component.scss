@@ -1,3 +1,7 @@
+::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+}
+
 mat-sidenav {
 	margin: 1rem;
 	display: flex;
@@ -9,10 +13,11 @@ mat-sidenav {
 
 	.logo-container {
 		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		height: 200px;
-		width: 3.5rem;
+    flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+    padding: 0 0.5rem;
+    margin-bottom: 5rem;
 
 		img {
 			width: 2.5rem;
@@ -20,6 +25,15 @@ mat-sidenav {
 			padding-top: 1rem;
 			cursor: pointer;
 		}
+
+    mat-icon {
+      font-size: 2rem;
+      cursor: pointer;
+
+      &.collapse {
+        opacity: 0;
+      }
+    }
 	}
 
 	mat-nav-list {
@@ -27,18 +41,21 @@ mat-sidenav {
 
 		a {
 			display: flex;
+      flex-wrap: wrap;
 			align-items: center;
 			justify-content: center;
 		}
 
 		.nav-text {
-      font-size: 0.9rem;;
+      font-size: 0.9rem;
 			margin-left: 0.8rem;
 			opacity: 0;
 
 		}
 
     .second-icon {
+      position: absolute;
+      right: 1rem;
       opacity: 0;
     }
 	}
@@ -47,14 +64,31 @@ mat-sidenav {
 .expanded {
 	width: 250px;
 
+  .logo-container {
+
+    mat-icon {
+      &.collapse {
+        opacity: 1;
+        transition: opacity 1s;
+      }
+    }
+  }
+
 	mat-nav-list {
+    width: 100%;
+
 		.nav-text {
 			opacity: 1;
-      transition: opacity 0.1s;
+      transition: opacity 1s;
 		}
 
     .second-icon {
       opacity: 1;
+      transition: opacity 1s;
     }
 	}
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
