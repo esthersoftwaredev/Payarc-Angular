@@ -1,0 +1,81 @@
+@import "../../../styles.scss";
+
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	font-family: $poppins;
+
+  .time {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+	.card-wrapper {
+		width: 70vw;
+
+		mat-card {
+			padding: 3rem 2rem 3rem 1rem;
+			flex-direction: row;
+			align-items: center;
+
+			.card-image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 35%;
+
+				img {
+					width: 14rem;
+				}
+			}
+			.card-content {
+				width: 65%;
+
+				h1 {
+					font-family: $poppins;
+					font-size: 3rem;
+					font-weight: bold;
+					line-height: 5rem;
+				}
+
+				a {
+					color: $accent;
+				}
+			}
+		}
+	}
+
+	.cards-wrapper {
+		display: flex;
+		width: 70vw;
+
+		mat-card {
+			width: 33%;
+      padding: 2rem;
+
+      h2 {
+        font-family: $poppins;
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+
+      a {
+        background-color: $accent;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        width: 30%;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: all ease-in-out .3s;
+        }
+      }
+		}
+	}
+}

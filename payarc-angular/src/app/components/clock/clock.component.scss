@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+:host {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  color: #707070;
+  text-align: right;
+}
+
+.time {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 1.1rem;
+}

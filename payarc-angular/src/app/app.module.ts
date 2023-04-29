@@ -14,9 +14,10 @@ import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from "./components/home/home.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
+import { ClockComponent } from './components/clock/clock.component';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, SidenavComponent],
+	declarations: [AppComponent, HomeComponent, SidenavComponent, ClockComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

@@ -17,7 +17,7 @@ export class SidenavComponent {
       text: 'Dashboard',
     },
     {
-      routerLink: '/about',
+      routerLink: '/my-payarc',
       icon: 'linked',
       text: 'My Payarc',
       additionalIcon: 'keyboard_arrow_down',
