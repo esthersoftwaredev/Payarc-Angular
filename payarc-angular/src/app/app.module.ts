@@ -36,7 +36,7 @@ import { PayarcTrainingStepperComponent } from './components/payarc-training-ste
 		MatListModule,
 		MatCardModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

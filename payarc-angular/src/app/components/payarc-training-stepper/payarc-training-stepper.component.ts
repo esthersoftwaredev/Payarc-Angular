@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-
+import { Component,Input, ViewChild } from '@angular/core';
+import { MatStepper } from '@angular/material/stepper';
 @Component({
   selector: 'app-payarc-training-stepper',
   templateUrl: './payarc-training-stepper.component.html',
   styleUrls: ['./payarc-training-stepper.component.scss']
 })
 export class PayarcTrainingStepperComponent {
-  // constructor(private _formBuilder: FormBuilder) {}
-  // firstFormGroup: FormGroup = this._formBuilder.group({firstCtrl: ['']});
-  // secondFormGroup: FormGroup = this._formBuilder.group({secondCtrl: ['']});
+
+  @ViewChild('stepper', { static: false }) stepper!: MatStepper;
+  @Input() activeStep!: number;
+
+  ngOnChanges() {
+    if (this.stepper) {
+      this.stepper.selectedIndex = this.activeStep;
+    }
+  }
 }
