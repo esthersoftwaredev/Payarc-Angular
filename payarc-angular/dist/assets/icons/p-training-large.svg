@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="103" height="103" viewBox="0 0 103 103">
+  <defs>
+    <filter id="Path_840" x="0" y="0" width="103" height="103" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon" transform="translate(9 6)">
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Path_840)">
+      <path id="Path_840-2" data-name="Path 840" d="M9,0H76a9,9,0,0,1,9,9V76a9,9,0,0,1-9,9H9a9,9,0,0,1-9-9V9A9,9,0,0,1,9,0Z" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g id="Group_2760" data-name="Group 2760" transform="translate(24 27.999)">
+      <rect id="Rectangle_303" data-name="Rectangle 303" width="34.015" height="4.328" rx="2.164" fill="#63a5ed" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+      <path id="Path_1233" data-name="Path 1233" d="M19.153,50.331V67.1a.943.943,0,0,0,.943.943H33.237v3.111l-2.572,1.8a.706.706,0,0,0-.173.983l.207.3a.706.706,0,0,0,.983.173l2.441-1.71,2.441,1.71a.706.706,0,0,0,.983-.173l.207-.3a.706.706,0,0,0-.173-.983l-2.572-1.8V68.047H48.151a.943.943,0,0,0,.943-.943V50.331Z" transform="translate(-17.121 -44.991)" fill="#63a5ed" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    </g>
+    <g id="Group_2754" data-name="Group 2754" transform="translate(25.063 27.727)">
+      <rect id="Rectangle_303-2" data-name="Rectangle 303" width="34.015" height="4.328" rx="2.164" fill="#63a5ed" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+      <path id="Path_1233-2" data-name="Path 1233" d="M19.153,50.331V67.1a.943.943,0,0,0,.943.943H33.237v3.111l-2.572,1.8a.706.706,0,0,0-.173.983l.207.3a.706.706,0,0,0,.983.173l2.441-1.71,2.441,1.71a.706.706,0,0,0,.983-.173l.207-.3a.706.706,0,0,0-.173-.983l-2.572-1.8V68.047H48.151a.943.943,0,0,0,.943-.943V50.331Z" transform="translate(-17.121 -44.991)" fill="#63a5ed" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
