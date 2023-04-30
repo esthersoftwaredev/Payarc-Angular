@@ -13,14 +13,17 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatStepperModule } from '@angular/material/stepper';
+
 
 import { OverviewComponent } from "./components/overview/overview.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { ClockComponent } from './components/clock/clock.component';
 import { PayarcTrainingComponent } from './components/payarc-training/payarc-training.component';
+import { PayarcTrainingStepperComponent } from './components/payarc-training-stepper/payarc-training-stepper.component';
 
 @NgModule({
-	declarations: [AppComponent, OverviewComponent, SidenavComponent, ClockComponent, PayarcTrainingComponent],
+	declarations: [AppComponent, OverviewComponent, SidenavComponent, ClockComponent, PayarcTrainingComponent, PayarcTrainingStepperComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
@@ -32,7 +35,8 @@ import { PayarcTrainingComponent } from './components/payarc-training/payarc-tra
 		MatButtonModule,
 		MatListModule,
 		MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],
