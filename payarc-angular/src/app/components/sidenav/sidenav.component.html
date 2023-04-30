@@ -16,14 +16,13 @@
 	<mat-nav-list>
 		<!-- first level -->
 		<ng-container *ngFor="let item of navigationItems">
-			<a mat-list-item [routerLink]="item.routerLink" routerLinkActive="active">
+			<a mat-list-item [routerLink]="item.routerLink" routerLinkActive="active" (click)="item.showSubmenu = !item.showSubmenu">
 				<mat-icon svgIcon="{{ item.icon }}"></mat-icon>
 				<span class="nav-text">{{ item.text }}</span>
 				<ng-container *ngIf="item.additionalIcon">
 					<mat-icon
 						class="second-icon"
             [ngClass]="{'rotate': item.showSubmenu}"
-						(click)="item.showSubmenu = !item.showSubmenu"
 						>{{ item.additionalIcon }}</mat-icon
 					>
 				</ng-container>
@@ -32,13 +31,12 @@
 				<mat-nav-list class="submenu">
 					<!-- second level -->
 					<ng-container *ngFor="let subItem of item.submenu">
-						<a mat-list-item class="sub-item" [routerLink]="subItem.routerLink" routerLinkActive="active">
+						<a mat-list-item class="sub-item" [routerLink]="subItem.routerLink" routerLinkActive="active" (click)="subItem.showSubmenu = !subItem.showSubmenu">
 							<span class="nav-text">{{ subItem.text }}</span>
 							<ng-container *ngIf="subItem.additionalIcon">
 								<mat-icon
 									class="second-icon"
                   [ngClass]="{'rotate': subItem.showSubmenu}"
-									(click)="subItem.showSubmenu = !subItem.showSubmenu"
 									>{{  subItem.additionalIcon }}</mat-icon
 								>
 							</ng-container>

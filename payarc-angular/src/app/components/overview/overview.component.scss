@@ -16,6 +16,10 @@
 			flex-direction: row;
 			align-items: center;
 
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+
 			.card-image {
 				display: flex;
 				justify-content: center;
@@ -28,6 +32,10 @@
 			}
 			.card-content {
 				width: 65%;
+
+        @media (max-width: 768px) {
+          width: 85%;
+        }
 
 				h1 {
 					font-family: $poppins;

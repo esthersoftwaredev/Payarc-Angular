@@ -6,9 +6,9 @@ import { PayarcTrainingComponent } from './components/payarc-training/payarc-tra
 
 const routes: Routes = [
   { path: '', redirectTo: '/overview', pathMatch: 'full' },
-  // { path: '**', redirectTo: '/overview', pathMatch: 'full' },
   { path: 'overview', component: OverviewComponent },
   { path: 'payarc-training', component: PayarcTrainingComponent },
+  { path: '**', redirectTo: '/overview', pathMatch: 'full' },
 ];
 
 @NgModule({

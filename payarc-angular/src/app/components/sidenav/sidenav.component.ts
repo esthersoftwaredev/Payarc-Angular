@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { NavigationItem } from 'src/app/models/navigation-item';
 
 @Component({
@@ -9,6 +10,11 @@ import { NavigationItem } from 'src/app/models/navigation-item';
 export class SidenavComponent {
   opened = true;
   expanded = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: number; }; }) {
+    this.expanded = event.target.innerWidth >= 992;
+  }
 
   navigationItems: NavigationItem[] = [
     {
