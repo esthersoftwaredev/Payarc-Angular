@@ -12,6 +12,8 @@ import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import { OverviewComponent } from "./components/overview/overview.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { ClockComponent } from './components/clock/clock.component';
@@ -30,6 +32,7 @@ import { PayarcTrainingComponent } from './components/payarc-training/payarc-tra
 		MatButtonModule,
 		MatListModule,
 		MatCardModule,
+    MatExpansionModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],
@@ -74,6 +77,12 @@ export class AppModule {
 			)
 		);
 		this.matIconRegistry.addSvgIcon(
+			"p-training-large",
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				"assets/icons/p-training-large.svg"
+			)
+		);
+		this.matIconRegistry.addSvgIcon(
 			"p-circle",
 			this.domSanitizer.bypassSecurityTrustResourceUrl(
 				"assets/icons/p-circle.svg"
@@ -95,6 +104,12 @@ export class AppModule {
 			"profile-mine",
 			this.domSanitizer.bypassSecurityTrustResourceUrl(
 				"assets/icons/profile-mine.svg"
+			)
+		);
+		this.matIconRegistry.addSvgIcon(
+			"circle",
+			this.domSanitizer.bypassSecurityTrustResourceUrl(
+				"assets/icons/circle.svg"
 			)
 		);
 	}

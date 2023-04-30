@@ -6,6 +6,7 @@
 	align-items: flex-start;
 	justify-content: center;
 	font-family: $poppins;
+  color: $primary;
 
 	.card-wrapper {
 		width: 70vw;
@@ -30,7 +31,7 @@
 
 				h1 {
 					font-family: $poppins;
-					font-size: 3rem;
+					font-size: $h1;
 					font-weight: bold;
 					line-height: 5rem;
 				}
@@ -52,7 +53,7 @@
 
       h2 {
         font-family: $poppins;
-        font-size: 1.7rem;
+        font-size: $h2;
         font-weight: bold;
       }
 

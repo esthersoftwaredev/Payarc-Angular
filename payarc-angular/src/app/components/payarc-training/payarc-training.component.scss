@@ -1,11 +1,20 @@
 @import "../../../styles.scss";
 
+:host ::ng-deep .mat-expansion-indicator {
+	padding: 0 1rem;
+	&::after {
+		padding: 0.4rem;
+		color: $accent;
+	}
+}
+
 .content-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
 	font-family: $poppins;
+	color: $primary;
 
 	.card-wrapper {
 		width: 55vw;
@@ -30,13 +39,91 @@
 
 				h1 {
 					font-family: $poppins;
-					font-size: 3rem;
+					font-size: $h1;
 					font-weight: bold;
 					line-height: 5rem;
 				}
 
 				a {
 					color: $accent;
+				}
+			}
+		}
+	}
+
+	.expansion-wrapper {
+		width: 54vw;
+		margin: 1rem 0 2rem 0.5rem;
+
+		mat-accordion {
+			mat-expansion-panel {
+				margin: 1rem 0;
+				border-radius: 0.4rem;
+
+				mat-expansion-panel-header {
+					background-color: aqua;
+					flex-wrap: wrap;
+					min-height: 10rem;
+					padding: 0 1rem 0 0;
+
+					mat-panel-title {
+						justify-content: center;
+						height: 2.5rem;
+						margin: 2rem;
+
+						mat-icon {
+							transform: scale(5);
+						}
+					}
+
+					mat-panel-description {
+						flex-grow: 8;
+						align-items: flex-start;
+
+						h3 {
+							color: $primary;
+							font-family: $poppins;
+							font-size: $h3;
+							font-weight: 600;
+							text-align: left;
+						}
+
+						p {
+							color: $primary;
+						}
+					}
+
+					mat-panel-description {
+						display: flex;
+						flex-direction: column;
+						flex-wrap: wrap;
+					}
+				}
+
+				.mat-expansion-panel-content {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-items: center;
+					margin: 2rem 0 1.5rem;
+
+          .completion {
+            display: flex;
+
+            input {
+              height: 1.3rem;
+              width: 1.3rem;
+              margin-right: 1rem;
+            }
+
+            h4 {
+              color: $primary;
+              font-family: $poppins;
+              font-size: $h4;
+              font-weight: 600;
+              margin: 0;
+            }
+          }
 				}
 			}
 		}

@@ -6,6 +6,11 @@ $accent-bgr: #d6e3f1;
 
 $poppins: "Poppins", sans-serif;
 
+$h1: 3rem;
+$h2: 1.7rem;
+$h3: 1.5rem;
+$h4: 1.2rem;
+
 html,
 body {
 	height: 100%;
@@ -17,7 +22,7 @@ body {
 
 .content-wrapper {
 	min-width: 80vw;
-	min-height: 95vh;
+	min-height: 80vh;
 	margin: 1rem;
 
   mat-card {

@@ -1,9 +1,6 @@
 @import "../../../styles.scss";
-
-:host {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
+.time {
+  width: 80vw;
   color: #707070;
   text-align: right;
   font-family: $poppins;
@@ -11,7 +8,7 @@
 
 .time {
   font-size: 3rem;
-  line-height: 4rem;
+  line-height: 2.5rem;
   font-weight: bold;
 }
 
