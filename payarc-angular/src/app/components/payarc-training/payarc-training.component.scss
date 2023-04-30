@@ -8,6 +8,16 @@
 	}
 }
 
+:host ::ng-deep .opened {
+  .mat-expansion-indicator {
+    padding: 0 1rem;
+    &::after {
+      padding: 0.4rem;
+      color: #fff;
+    }
+  }
+}
+
 .content-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -61,10 +71,20 @@
 				border-radius: 0.4rem;
 
 				mat-expansion-panel-header {
-					background-color: aqua;
 					flex-wrap: wrap;
 					min-height: 10rem;
 					padding: 0 1rem 0 0;
+
+					&.opened {
+						background-color: $accent;
+
+						mat-panel-description {
+							h3,
+							p {
+								color: #fff;
+							}
+						}
+					}
 
 					mat-panel-title {
 						justify-content: center;
@@ -107,23 +127,23 @@
 					align-items: center;
 					margin: 2rem 0 1.5rem;
 
-          .completion {
-            display: flex;
+					.completion {
+						display: flex;
 
-            input {
-              height: 1.3rem;
-              width: 1.3rem;
-              margin-right: 1rem;
-            }
+						input {
+							height: 1.3rem;
+							width: 1.3rem;
+							margin-right: 1rem;
+						}
 
-            h4 {
-              color: $primary;
-              font-family: $poppins;
-              font-size: $h4;
-              font-weight: 600;
-              margin: 0;
-            }
-          }
+						h4 {
+							color: $primary;
+							font-family: $poppins;
+							font-size: $h4;
+							font-weight: 600;
+							margin: 0;
+						}
+					}
 				}
 			}
 		}

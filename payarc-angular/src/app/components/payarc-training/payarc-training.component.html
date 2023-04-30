@@ -16,8 +16,8 @@
   <div class="expansion-wrapper">
     <mat-accordion class="example-headers-align" multi>
 
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
+      <mat-expansion-panel (opened)="onPanelOpen(0)" (closed)="onPanelClose(0)">
+        <mat-expansion-panel-header [ngClass]="{'opened': isPanelOpen[0]}">
           <mat-panel-title>
             <mat-icon svgIcon="p-training-large"></mat-icon>
           </mat-panel-title>
@@ -35,8 +35,8 @@
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
+      <mat-expansion-panel (opened)="onPanelOpen(1)" (closed)="onPanelClose(1)">
+        <mat-expansion-panel-header [ngClass]="{'opened': isPanelOpen[1]}">
           <mat-panel-title>
             <mat-icon svgIcon="p-training-large"></mat-icon>
           </mat-panel-title>
@@ -54,8 +54,8 @@
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
+      <mat-expansion-panel (opened)="onPanelOpen(2)" (closed)="onPanelClose(2)">
+        <mat-expansion-panel-header [ngClass]="{'opened': isPanelOpen[2]}">
           <mat-panel-title>
             <mat-icon svgIcon="p-training-large"></mat-icon>
           </mat-panel-title>
@@ -73,8 +73,8 @@
         </div>
       </mat-expansion-panel>
 
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
+      <mat-expansion-panel (opened)="onPanelOpen(3)" (closed)="onPanelClose(3)">
+        <mat-expansion-panel-header [ngClass]="{'opened': isPanelOpen[3]}">
           <mat-panel-title>
             <mat-icon svgIcon="p-training-large"></mat-icon>
           </mat-panel-title>
@@ -92,8 +92,7 @@
         </div>
       </mat-expansion-panel>
 
-
-
     </mat-accordion>
   </div>
+
 </div>
