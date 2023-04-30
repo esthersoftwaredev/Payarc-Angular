@@ -1,157 +1,52 @@
-import { Component, HostListener } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { NavigationItem } from 'src/app/models/navigation-item';
+import { Component, HostListener, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { NavigationItem } from "src/app/models/navigation-item";
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+	selector: "app-sidenav",
+	templateUrl: "./sidenav.component.html",
+	styleUrls: ["./sidenav.component.scss"],
 })
-export class SidenavComponent {
-  opened = true;
-  expanded = true;
+export class SidenavComponent implements OnInit {
+	opened = true;
+	expanded = true;
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: { target: { innerWidth: number; }; }) {
-    this.expanded = event.target.innerWidth >= 992;
-  }
+	@HostListener("window:resize", ["$event"])
+	onResize(event: { target: { innerWidth: number } }) {
+		this.expanded = event.target.innerWidth >= 992;
+	}
 
-  navigationItems: NavigationItem[] = [
-    {
-      routerLink: '/dashboard',
-      icon: 'dashboard',
-      text: 'Dashboard',
-    },
-    {
-      routerLink: '/my-payarc',
-      icon: 'linked',
-      text: 'My Payarc',
-      additionalIcon: 'keyboard_arrow_down',
-      submenu: [
-        {
-          routerLink: '/overview',
-          text: 'Overview',
-        },
-        {
-          routerLink: '/apply-app',
-          text: 'Apply App',
-          additionalIcon: 'keyboard_arrow_down',
-          submenu: [
-            {
-              routerLink: '/applications',
-              text: 'Applications',
-            },
-            {
-              routerLink: '/pricing-templates',
-              text: 'Pricing Templates',
-            },
-            {
-              routerLink: '/reports',
-              text: 'Reports',
-            },
-            {
-              routerLink: '/user-maintenance',
-              text: 'User Maintenance',
-            },
-            {
-              routerLink: '/settings',
-              text: 'Settings',
-            },
-          ],
-        },
-        {
-          routerLink: '/my-residuals',
-          text: 'My Residuals',
-        },
-        {
-          routerLink: '/my-merchants',
-          text: 'My Merchants',
-          additionalIcon: 'keyboard_arrow_down',
-          submenu: [
-            {
-              routerLink: '/live-merchants',
-              text: 'Live Merchants',
-            },
-            {
-              routerLink: '/deposits-batch-report',
-              text: 'Deposits Batch & Report',
-            },
-            {
-              routerLink: '/chargebacks',
-              text: 'Chargebacks',
-            },
-            {
-              routerLink: '/ach Returns',
-              text: 'ACH Returns',
-            },
-          ],
-        },
-        {
-          routerLink: '/resources',
-          text: 'Resources',
-          additionalIcon: 'keyboard_arrow_down',
-          submenu: [
-            {
-              routerLink: '/resources',
-              text: 'Resources',
-            },
-            {
-              routerLink: '/api-keys',
-              text: 'API Keys',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      routerLink: '/p-circle',
-      icon: 'p-circle',
-      text: 'About Payarc',
-    },
-    {
-      routerLink: '/payarc-training',
-      icon: 'p-training',
-      text: 'Payarc Training',
-    },
-    {
-      routerLink: '/training',
-      icon: 'training',
-      text: 'Industry Training',
-    },
-    {
-      routerLink: '/contact',
-      icon: 'marketing',
-      text: 'Marketing Materials',
-    },
-    {
-      routerLink: '/form',
-      icon: 'form',
-      text: 'Marketing Request Forms',
-    },
-    {
-      routerLink: '/contact',
-      icon: 'tools',
-      text: 'Access to tools',
-    },
-  ];
+	navigationItems: NavigationItem[] = [];
 
+	constructor(private http: HttpClient) {}
 
-  expandSidenav(): void {
-    this.expanded = true;
-  }
+	ngOnInit(): void {
+		this.fetchNavigationItems();
+	}
 
-  collapseSidenav(): void {
-    this.expanded = false;
-    this.collapseAllSubmenus(this.navigationItems);
+	fetchNavigationItems(): void {
+		this.http
+			.get<NavigationItem[]>("assets/navigation-items.json")
+			.subscribe((data) => {
+				this.navigationItems = data;
+			});
+	}
 
-  }
+	expandSidenav(): void {
+		this.expanded = true;
+	}
 
-  collapseAllSubmenus(items: NavigationItem[]): void {
-    items.forEach(item => {
-      if (item.submenu) {
-        item.showSubmenu = false;
-        this.collapseAllSubmenus(item.submenu);
-      }
-    });
-  }
+	collapseSidenav(): void {
+		this.expanded = false;
+		this.collapseAllSubmenus(this.navigationItems);
+	}
+
+	collapseAllSubmenus(items: NavigationItem[]): void {
+		items.forEach((item) => {
+			if (item.submenu) {
+				item.showSubmenu = false;
+				this.collapseAllSubmenus(item.submenu);
+			}
+		});
+	}
 }
