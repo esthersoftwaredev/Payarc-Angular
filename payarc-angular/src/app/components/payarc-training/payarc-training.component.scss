@@ -38,6 +38,14 @@
 			flex-direction: row;
 			align-items: center;
 
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 768px) {
+        width: 70vw;
+      }
+
 			.card-image {
 				display: flex;
 				justify-content: center;
@@ -50,6 +58,10 @@
 			}
 			.card-content {
 				width: 65%;
+
+        @media (max-width: 992px) {
+          width: 85%;
+        }
 
 				h1 {
 					font-family: $poppins;
@@ -68,6 +80,10 @@
 	.expansion-wrapper {
 		width: 54vw;
 		margin: 1rem 0 2rem 0.5rem;
+
+    @media (max-width: 768px) {
+      width: 70vw;
+    }
 
 		mat-accordion {
 			mat-expansion-panel {
@@ -90,6 +106,10 @@
 						}
 					}
 
+          @media (max-width: 576px) {
+            min-height: 17rem;
+          }
+
 					mat-panel-title {
 						justify-content: center;
 						height: 2.5rem;
@@ -97,6 +117,14 @@
 
 						mat-icon {
 							transform: scale(5);
+
+              @media (max-width: 768px) {
+                transform: scale(4);
+              }
+
+              @media (max-width: 576px) {
+                transform: scale(3);
+              }
 						}
 					}
 

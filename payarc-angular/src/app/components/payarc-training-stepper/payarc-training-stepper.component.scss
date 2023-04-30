@@ -14,11 +14,11 @@
 	transform: scale(2);
 }
 
-// :host ::ng-deep .mat-step-icon-selected {
-// 	background-color: $accent;
-// }
-
 .payarc-training-stepper {
 	margin-top: 6.5rem;
 	padding: 1rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

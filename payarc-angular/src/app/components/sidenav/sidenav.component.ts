@@ -22,7 +22,12 @@ export class SidenavComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.fetchNavigationItems();
+    this.checkWindowSize();
 	}
+
+  checkWindowSize(): void {
+    this.expanded = window.innerWidth >= 992;
+  }
 
 	fetchNavigationItems(): void {
 		this.http

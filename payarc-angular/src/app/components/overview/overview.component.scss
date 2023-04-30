@@ -55,9 +55,21 @@
 		display: flex;
 		width: 70vw;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
 		mat-card {
 			width: 33%;
       padding: 2rem;
+
+      @media (max-width: 768px) {
+        width: 97%;
+      }
+
+      @media (max-width: 576px) {
+        width: 96%;
+      }
 
       h2 {
         font-family: $poppins;
