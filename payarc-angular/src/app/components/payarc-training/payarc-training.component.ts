@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./payarc-training.component.scss']
 })
 export class PayarcTrainingComponent {
+
   isPanelOpen: { [index: number]: boolean } = {};
 
   onPanelOpen(panelIndex: number): void {

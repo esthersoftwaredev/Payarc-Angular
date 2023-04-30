@@ -1,5 +1,9 @@
 @import "../../../styles.scss";
 
+:host {
+  display: flex;
+}
+
 :host ::ng-deep .mat-expansion-indicator {
 	padding: 0 1rem;
 	&::after {
