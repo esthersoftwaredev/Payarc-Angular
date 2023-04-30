@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class PayarcTrainingComponent {
   isPanelOpen: { [index: number]: boolean } = {};
-  activeStep: number = 0;
+  currentStepIndex: number = 0;
+  completionStatus = [true, true, false, false];
 
   onPanelOpen(panelIndex: number): void {
     this.isPanelOpen[panelIndex] = true;
@@ -15,6 +16,6 @@ export class PayarcTrainingComponent {
 
   onPanelClose(panelIndex: number): void {
     this.isPanelOpen[panelIndex] = false;
-    this.activeStep = panelIndex;
+    this.currentStepIndex = panelIndex;
   }
 }

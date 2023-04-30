@@ -1,20 +1,19 @@
 <mat-card class="payarc-training-stepper">
   <mat-vertical-stepper [linear]="false" #stepper >
 
-    <mat-step>
+    <mat-step [completed]="completionStatus[0]" [ngClass]="{'completed': completionStatus[0]}">
       <ng-template matStepLabel><h4>Apply App</h4></ng-template>
-
     </mat-step>
 
-    <mat-step>
+    <mat-step [completed]="completionStatus[1]">
       <ng-template matStepLabel><h4>Admin Portal</h4></ng-template>
     </mat-step>
 
-    <mat-step>
+    <mat-step [completed]="completionStatus[2]">
       <ng-template matStepLabel><h4>Merchant Portal</h4></ng-template>
     </mat-step>
 
-    <mat-step>
+    <mat-step [completed]="completionStatus[3]">
       <ng-template matStepLabel><h4>Curv POS</h4></ng-template>
       <p>You are now done.</p>
       <div>

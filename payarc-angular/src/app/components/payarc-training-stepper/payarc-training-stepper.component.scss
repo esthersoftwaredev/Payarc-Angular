@@ -1,20 +1,24 @@
 @import "../../../styles.scss";
 
 ::ng-deep .mat-step-text-label {
-		h4 {
-			font-family: $poppins;
-      font-size: $h4;
-      font-weight: 600;
-      color: $primary;
-      margin: 0.1rem 0 0 1.5rem;
-		}
+	h4 {
+		font-family: $poppins;
+		font-size: $h4;
+		font-weight: 600;
+		color: $primary;
+		margin: 0.1rem 0 0 1.5rem;
 	}
+}
 
 ::ng-deep .mat-step-icon {
-  transform: scale(2);
+	transform: scale(2);
 }
+
+// :host ::ng-deep .mat-step-icon-selected {
+// 	background-color: $accent;
+// }
 
 .payarc-training-stepper {
 	margin-top: 6.5rem;
-  padding: 1rem;
+	padding: 1rem;
 }

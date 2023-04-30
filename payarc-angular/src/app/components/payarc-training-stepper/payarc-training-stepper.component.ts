@@ -1,5 +1,5 @@
 import { Component,Input, ViewChild } from '@angular/core';
-import { MatStepper } from '@angular/material/stepper';
+import { MatStep, MatStepper } from '@angular/material/stepper';
 @Component({
   selector: 'app-payarc-training-stepper',
   templateUrl: './payarc-training-stepper.component.html',
@@ -8,11 +8,12 @@ import { MatStepper } from '@angular/material/stepper';
 export class PayarcTrainingStepperComponent {
 
   @ViewChild('stepper', { static: false }) stepper!: MatStepper;
-  @Input() activeStep!: number;
+  @Input() currentStepIndex!: number;
+  @Input() completionStatus: boolean[] = [];
 
   ngOnChanges() {
     if (this.stepper) {
-      this.stepper.selectedIndex = this.activeStep;
+      this.stepper.selectedIndex = this.currentStepIndex;
     }
   }
 }
