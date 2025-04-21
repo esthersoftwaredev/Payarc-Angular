@@ -2,15 +2,11 @@
 .time {
   width: 80vw;
   color: #707070;
-  text-align: right;
-  font-family: $poppins;
-}
-
-.time {
-
   font-size: 3rem;
   line-height: 2.5rem;
+  text-align: right;
   font-weight: bold;
+  font-family: $poppins;
 }
 
 .date {
