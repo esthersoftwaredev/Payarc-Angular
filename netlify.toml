@@ -1,5 +1,5 @@
 [build]
-  base = "payarc-angular/"
+  base = "/"
   command = "npm run build:prod"
   publish = "dist/"
 
