@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="cards-wrapper">
   <div class="card-wrapper">
     <mat-card class="overview">
       <div class="card-image">
@@ -6,14 +6,16 @@
       </div>
       <div class="card-content">
         <h1>Payarc Training</h1>
-        <p>In tiered pricing, each credit card transaction falls into a pricing category: qualified, mid-qualified, and non-qualified. Qualified rates are the lowest, and you might think that most of your credit card transactions fall into the qualified category. Not so! Downgrades can occur for several reasons, including, but not limited to:</p>
+        <p>In tiered pricing, each credit card transaction falls into a pricing category: qualified, mid-qualified, and
+          non-qualified. Qualified rates are the lowest, and you might think that most of your credit card transactions
+          fall into the qualified category. Not so! Downgrades can occur for several reasons, including, but not limited
+          to:</p>
       </div>
     </mat-card>
   </div>
 
   <div class="expansion-wrapper">
     <mat-accordion class="example-headers-align" multi>
-
       <mat-expansion-panel (opened)="onPanelOpen(0)" (closed)="onPanelClose(0)">
         <mat-expansion-panel-header [ngClass]="{'opened': isPanelOpen[0]}">
           <mat-panel-title>
@@ -21,7 +23,8 @@
           </mat-panel-title>
           <mat-panel-description>
             <h3>Apply app</h3>
-            <p>The Apply app is an online application tool that allows merchants to fill out and submit their onboarding application and documentation.</p>
+            <p>The Apply app is an online application tool that allows merchants to fill out and submit their onboarding
+              application and documentation.</p>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="mat-expansion-panel-content">
@@ -40,7 +43,8 @@
           </mat-panel-title>
           <mat-panel-description>
             <h3>Admin Portal</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.</p>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="mat-expansion-panel-content">
@@ -59,7 +63,8 @@
           </mat-panel-title>
           <mat-panel-description>
             <h3>Merchant Portal</h3>
-            <p>he merchant portal is an online platform for merchants that allows them to manage all aspects of their business, such as account information, run payments, and set-up subscriptions and recurring payments.</p>
+            <p>he merchant portal is an online platform for merchants that allows them to manage all aspects of their
+              business, such as account information, run payments, and set-up subscriptions and recurring payments.</p>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="mat-expansion-panel-content">
@@ -78,7 +83,9 @@
           </mat-panel-title>
           <mat-panel-description>
             <h3>Curv POS</h3>
-            <p>The Curv POS system is our all-in-one online ordering platform with all the digital tools restaurant owners need to manage orders, process payments, customize menus, organize employees, and improve customer engagement.</p>
+            <p>The Curv POS system is our all-in-one online ordering platform with all the digital tools restaurant
+              owners need to manage orders, process payments, customize menus, organize employees, and improve customer
+              engagement.</p>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="mat-expansion-panel-content">
@@ -92,7 +99,6 @@
 
     </mat-accordion>
   </div>
-
-
 </div>
-<app-payarc-training-stepper [currentStepIndex]="currentStepIndex" [completionStatus]="completionStatus"></app-payarc-training-stepper>
+<app-payarc-training-stepper [currentStepIndex]="currentStepIndex"
+  [completionStatus]="completionStatus"></app-payarc-training-stepper>
