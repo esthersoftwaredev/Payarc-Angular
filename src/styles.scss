@@ -20,20 +20,22 @@ body {
 	font-family: "Poppins", sans-serif;
 }
 
-.content-wrapper {
-	min-width: 55vw;
-	min-height: 80vh;
-	margin: 1rem;
-
-  mat-card {
-    margin: 0.5rem;
-    padding: 1rem;
+app-sidenav {
+  mat-sidenav:not(.expanded) {
+    mat-nav-list {
+      a {
+        width: 3.5rem !important;
+        padding: 0 !important;
+        .mdc-list-item__content {
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          .mat-mdc-list-item-unscoped-content {
+            display: flex !important;
+            width: 1.5rem !important;
+          }
+        }
+      }
+    }
   }
-}
-
-.clock {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1rem;
 }

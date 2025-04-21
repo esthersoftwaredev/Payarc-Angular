@@ -1,4 +1,11 @@
 @import "../../../styles.scss";
+:host {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+}
+
 .time {
   width: 80vw;
   color: #707070;

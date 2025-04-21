@@ -1,96 +1,96 @@
 @import "../../../styles.scss";
 
-.content-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	font-family: $poppins;
-  color: $primary;
+.card-wrapper {
+  width: 70vw;
 
-	.card-wrapper {
-		width: 70vw;
+  mat-card {
+    padding: 3rem 2rem 3rem 1rem;
+    flex-direction: row;
+    align-items: center;
 
-		mat-card {
-			padding: 3rem 2rem 3rem 1rem;
-			flex-direction: row;
-			align-items: center;
+    .card-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35%;
 
-      @media (max-width: 992px) {
-        flex-direction: column;
+      img {
+        width: 14rem;
       }
-
-			.card-image {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 35%;
-
-				img {
-					width: 14rem;
-				}
-			}
-			.card-content {
-				width: 65%;
-
-        @media (max-width: 768px) {
-          width: 85%;
-        }
-
-				h1 {
-					font-family: $poppins;
-					font-size: $h1;
-					font-weight: bold;
-					line-height: 5rem;
-				}
-
-				a {
-					color: $accent;
-				}
-			}
-		}
-	}
-
-	.cards-wrapper {
-		display: flex;
-		width: 70vw;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
     }
 
-		mat-card {
-			width: 33%;
-      padding: 2rem;
+    .card-content {
+      width: 65%;
 
-      @media (max-width: 768px) {
-        width: 97%;
-      }
-
-      @media (max-width: 576px) {
-        width: 96%;
-      }
-
-      h2 {
+      h1 {
         font-family: $poppins;
-        font-size: $h2;
+        font-size: $h1;
         font-weight: bold;
+        line-height: 5rem;
       }
 
       a {
-        background-color: $accent;
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        width: 30%;
-        padding: 0.5rem 1rem;
-        border-radius: 0.3rem;
-
-        &:hover {
-          transform: scale(1.1);
-          transition: all ease-in-out .3s;
-        }
+        color: $accent;
       }
-		}
-	}
+    }
+  }
+}
+
+.cards-wrapper {
+  display: flex;
+  width: 70vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  mat-card {
+    width: 33%;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+      width: 97%;
+    }
+
+    @media (max-width: 576px) {
+      width: 96%;
+    }
+
+    h2 {
+      font-family: $poppins;
+      font-size: $h2;
+      font-weight: bold;
+    }
+
+    a {
+      background-color: $accent;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      width: 30%;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all ease-in-out .3s;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  mat-card {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    mat-card {
+      .card-content {
+        width: 85%;
+      }
+    }
+  }
 }

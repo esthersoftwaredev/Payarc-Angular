@@ -1,5 +1,10 @@
 @import "../../../styles.scss";
 
+:host {
+  position: relative;
+  z-index: 5;
+}
+
 ::ng-deep .mdc-list-item__primary-text {
 	display: flex;
 
